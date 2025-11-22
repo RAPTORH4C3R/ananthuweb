@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANANTHU NARAYANAN | Integrated Systems & Media Specialist Portfolio</title>
+    <!-- Load Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic professional icons -->
+    <script type="module">
+        import 'https://unpkg.com/lucide@latest/dist/umd/lucide.js';
+        const replaceIcons = (icons) => {
+            const parser = new DOMParser();
+            icons.forEach(icon => {
+                const iconName = icon.getAttribute('data-icon');
+                if (iconName) {
+                    const svgHtml = lucide.icons[iconName]?.toSvg();
+                    if (svgHtml) {
+                        const svgDoc = parser.parseFromString(svgHtml, 'image/svg+xml');
+                        const svg = svgDoc.documentElement;
+                        // Copy classes and attributes
+                        svg.setAttribute('class', icon.getAttribute('class'));
+                        svg.setAttribute('stroke-width', icon.getAttribute('stroke-width') || '2');
+                        icon.parentNode.replaceChild(svg, icon);
+                    }
+                }
+            });
+        };
+        document.addEventListener('DOMContentLoaded', () => {
+            const icons = document.querySelectorAll('i[data-icon]');
+            replaceIcons(icons);
+        });
+    </script>
+    <style>
+        /* Custom styles for a clean, modern look */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background */
+            color: #c9d1d9; /* Light text color */
+        }
+        .section-heading {
+            border-left: 4px solid #38bdf8; /* Accent color */
+            padding-left: 1rem;
+        }
+        .skill-card {
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(56, 189, 248, 0.2), 0 4px 6px -2px rgba(56, 189, 248, 0.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <!-- Navigation -->
+    <header class="sticky top-0 z-50 bg-gray-900/95 backdrop-blur-sm shadow-lg border-b border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="text-2xl font-extrabold text-cyan-400">
+                A<span class="text-white">NANTHU</span>
+            </div>
+            
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="menu-button" class="md:hidden p-2 rounded-lg text-cyan-400 hover:bg-gray-700 transition duration-150">
+                <i data-icon="menu" id="menu-icon" class="w-6 h-6"></i>
+            </button>
+            
+            <!-- Desktop Navigation Links -->
+            <nav class="space-x-4 hidden md:flex">
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 transition duration-150">About</a>
+                <a href="#technical" class="text-gray-300 hover:text-cyan-400 transition duration-150">Technical Expertise</a>
+                <a href="#creative" class="text-gray-300 hover:text-cyan-400 transition duration-150">Creative Media</a>
+                <a href="#contact" class="px-3 py-1 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition duration-150">Contact</a>
+            </nav>
+        </div>
+
+        <!-- Mobile Menu (Full Width, initially hidden) -->
+        <nav id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <div class="flex flex-col space-y-3">
+                <!-- Using onclick to close the menu after a link is tapped -->
+                <a href="#about" class="text-gray-300 hover:text-cyan-400 transition duration-150 p-2 rounded-lg bg-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').setAttribute('data-icon', 'menu');">About</a>
+                <a href="#technical" class="text-gray-300 hover:text-cyan-400 transition duration-150 p-2 rounded-lg bg-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').setAttribute('data-icon', 'menu');">Technical Expertise</a>
+                <a href="#creative" class="text-gray-300 hover:text-cyan-400 transition duration-150 p-2 rounded-lg bg-gray-800" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').setAttribute('data-icon', 'menu');">Creative Media</a>
+                <a href="#contact" class="p-2 bg-cyan-600 text-white rounded-lg hover:bg-cyan-500 transition duration-150 text-center" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.getElementById('menu-icon').setAttribute('data-icon', 'menu');">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-20 pb-16 bg-gray-900 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-10">
+            <!-- Text Content -->
+            <div class="md:w-3/5 text-center md:text-left">
+                <p class="text-cyan-400 text-lg font-semibold uppercase tracking-widest mb-2">Self-Taught & Results-Driven</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-white mb-4">
+                    ANANTHU NARAYANAN: <span class="text-cyan-400">Integrated Specialist</span>
+                </h1>
+                <p class="text-xl text-gray-400 mb-8 max-w-xl mx-auto md:mx-0">
+                    Combining advanced field networking, physical security installation, and professional creative media skills to deliver comprehensive technology solutions.
+                </p>
+                <a href="#technical" class="px-8 py-3 bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-500 transition duration-300 shadow-xl shadow-cyan-900/50">
+                    Explore Expertise
+                </a>
+            </div>
+            <!-- Profile Image -->
+            <div class="md:w-2/5 flex justify-center">
+                <!-- IMPORTANT: User should ensure this file ('sdbbs.jpg') is uploaded to the hosting environment -->
+                <div class="w-64 h-64 md:w-80 md:h-80 bg-gray-800 rounded-full overflow-hidden border-4 border-cyan-400 shadow-2xl shadow-cyan-900/70">
+                    <img src="./sdbbs.jpg" alt="Professional Profile Photo" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-500" 
+                        onerror="this.onerror=null; this.src='https://placehold.co/800x800/1f2937/ffffff?text=Upload+sdbbs.jpg+Here'"
+                    >
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold section-heading text-white mb-8">Who I Am</h2>
+            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
+                <p class="text-gray-300 text-lg leading-relaxed">
+                    Hello, I'm **ANANTHU NARAYANAN**. I am a highly motivated, self-learned professional with years of hands-on experience as a salaried employee across multiple companies. My passion lies in bridging the gap between physical infrastructure and digital connectivity. While I may not hold traditional academic certifications, my real-world skills in network configuration, physical installation, and problem-solving have been honed in demanding operational environments. I bring a unique combination of technical robustness and creative vision (as a photographer/editor) to every project, ensuring both functionality and aesthetic quality.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section id="technical" class="py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold section-heading text-white mb-10">Technical Expertise: Infrastructure, Security & Development</h2>
+            
+            <!-- Adjusting grid to 4 columns for large screens to accommodate the new coding skill -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Skill Card 1: Network Configuration & Troubleshooting -->
+                <div class="skill-card bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <i data-icon="router" class="w-8 h-8 text-cyan-400 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Network Configuration & Support</h3>
+                    <ul class="text-gray-400 space-y-2 list-none text-sm">
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Advanced network device configuration.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>In-depth network bug bounding and resolution.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Expert Wi-Fi system installation and optimization.</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 2: Optical Fiber & Infrastructure -->
+                <div class="skill-card bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <i data-icon="git-fork" class="w-8 h-8 text-cyan-400 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Fiber Optics & Field Installation</h3>
+                    <ul class="text-gray-400 space-y-2 list-none text-sm">
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Precision optical fiber installation and splicing.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>New network device and rack installation.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Robust cabling and infrastructure setup.</li>
+                    </ul>
+                </div>
+
+                <!-- Skill Card 3: CCTV & Security Systems -->
+                <div class="skill-card bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <i data-icon="video" class="w-8 h-8 text-cyan-400 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Physical Security Integration</h3>
+                    <ul class="text-gray-400 space-y-2 list-none text-sm">
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Comprehensive CCTV system installation.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Setting up various security surveillance devices.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Integrating physical security with network infrastructure.</li>
+                    </ul>
+                </div>
+                
+                <!-- Skill Card 4: Web Development (Backend & Frontend) -->
+                <div class="skill-card bg-gray-800 p-6 rounded-xl border border-gray-700">
+                    <i data-icon="code-xml" class="w-8 h-8 text-cyan-400 mb-3"></i>
+                    <h3 class="text-xl font-semibold text-white mb-2">Web Development (Code)</h3>
+                    <ul class="text-gray-400 space-y-2 list-none text-sm">
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Backend scripting and logic implementation.</li>
+                        <li><i data-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Proficiency in structuring content with HTML.</li>
+                        <li><i data-icon="check-circle" class="w-4 h-4 inline mr-2 text-green-500" stroke-width="3"></i>Understanding of full-stack web application principles.</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Cybersecurity Section -->
+            <div class="mt-12 bg-gray-700/50 p-6 rounded-xl border border-gray-600 flex items-center gap-4">
+                <i data-icon="shield-alert" class="w-8 h-8 text-red-400 flex-shrink-0"></i>
+                <div>
+                    <h4 class="text-xl font-semibold text-white">Cybersecurity Enthusiast</h4>
+                    <p class="text-gray-300">Constantly learning and applying principles of cybersecurity to ensure all installed networks and systems are resilient and secure against threats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Portfolio Section -->
+    <section id="creative" class="py-16 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold section-heading text-white mb-10">Creative Media: Photography & Editing</h2>
+            
+            <div class="bg-gray-800 p-8 rounded-xl shadow-2xl">
+                <p class="text-gray-300 text-lg mb-6">
+                    Beyond technical systems, I possess a strong creative side, operating as a freelance **Photographer and Editor**. This dual skill set allows me to approach problems with both a technical structure and a visual perspective.
+                </p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Card 1: Photography -->
+                    <div class="bg-gray-700/50 p-6 rounded-lg">
+                        <i data-icon="camera" class="w-8 h-8 text-yellow-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-white mb-2">Professional Photography</h3>
+                        <p class="text-gray-400">Skilled in various genres including portrait, event, and documentary photography, focusing on compelling visual storytelling and composition.</p>
+                    </div>
+                    <!-- Card 2: Editing -->
+                    <div class="bg-gray-700/50 p-6 rounded-lg">
+                        <i data-icon="crop" class="w-8 h-8 text-yellow-400 mb-3"></i>
+                        <h3 class="text-xl font-semibold text-white mb-2">Image Editing & Post-Production</h3>
+                        <p class="text-gray-400">Expertise in industry-standard software for high-quality post-production, color correction, retouching, and final output preparation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold section-heading inline-block text-white mb-6">Let's Connect</h2>
+            <p class="text-xl text-gray-400 mb-8">
+                Ready to discuss your next infrastructure project or visual content needs? I am available for salaried positions and freelance work.
+            </p>
+            
+            <div class="flex flex-col flex-wrap justify-center items-center gap-4 max-w-2xl mx-auto">
+                <!-- Email (Primary button) -->
+                <a href="mailto:ananthunarayanan48@gmail.com" class="w-full sm:w-auto px-6 py-3 bg-cyan-600 text-white font-semibold rounded-xl hover:bg-cyan-500 transition duration-300">
+                    <i data-icon="mail" class="w-5 h-5 inline mr-2"></i> Email (ananthunarayanan48@gmail.com)
+                </a>
+                <!-- UAE Phone (Secondary button) -->
+                <a href="tel:+971566536876" class="w-full sm:w-auto px-6 py-3 bg-gray-700 text-gray-200 font-semibold rounded-xl hover:bg-gray-600 transition duration-300 border border-gray-600">
+                    <i data-icon="phone" class="w-5 h-5 inline mr-2"></i> Call UAE (+971 56 653 6876)
+                </a>
+                <!-- India Phone (Secondary button) -->
+                <a href="tel:+918589098338" class="w-full sm:w-auto px-6 py-3 bg-gray-700 text-gray-200 font-semibold rounded-xl hover:bg-gray-600 transition duration-300 border border-gray-600">
+                    <i data-icon="phone" class="w-5 h-5 inline mr-2"></i> Call India (+91 85890 98338)
+                </a>
+            </div>
+            
+            <p class="text-sm text-gray-500 mt-8">
+                Reach out via email or select the appropriate regional contact number.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            &copy; <span id="current-year"></span> ANANTHU NARAYANAN Portfolio. All Rights Reserved.
+        </div>
+    </footer>
+    
+    <script>
+        // Set the current year for the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // JavaScript for Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+
+            // Function to toggle the menu state
+            const toggleMenu = () => {
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                
+                // Update the icon: 'x' when open, 'menu' when closed
+                if (isHidden) {
+                    // Menu is hidden (closed)
+                    menuIcon.setAttribute('data-icon', 'menu');
+                    // Manually re-render the icon for Lucide
+                    replaceIcons([menuIcon.parentNode]); 
+                } else {
+                    // Menu is visible (open)
+                    menuIcon.setAttribute('data-icon', 'x');
+                    // Manually re-render the icon for Lucide
+                    replaceIcons([menuIcon.parentNode]);
+                }
+            };
+            
+            menuButton.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
